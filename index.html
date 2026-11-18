@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ═══ SEO: เมื่อได้โดเมนแล้ว แก้ https://brewsphere.com ทุกจุดในไฟล์นี้ + sitemap.xml + robots.txt ═══ -->
+<title>Brewsphere | คราฟท์เบียร์ไทย Hazy IPA, Lager, Stout และรับผลิตเบียร์ OEM</title>
+<meta name="description" content="Brewsphere โรงผลิตคราฟท์เบียร์ไทย เจ้าของเบียร์ Hopstar Hazy IPA, Hype-X IPA, Stardust, Lose Control, Smoke in Sphere, Juniper และ Sphere The Signature จำหน่ายแบบถัง Keg 20 ลิตรให้ร้าน และรับผลิตเบียร์ OEM ครบวงจร โรงผลิตที่ปทุมธานี ใกล้ฟิวเจอร์พาร์ค รังสิต">
+<link rel="canonical" href="https://brewsphere.com/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#05060a">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="th_TH">
+<meta property="og:site_name" content="Brewsphere">
+<meta property="og:title" content="Brewsphere | คราฟท์เบียร์ไทย · Drink Your Style, Drive Your Passion">
+<meta property="og:description" content="เบียร์แบรนด์ Brewsphere แบบถัง Keg สำหรับร้าน และรับผลิตเบียร์ OEM ครบวงจร">
+<meta property="og:url" content="https://brewsphere.com/">
+<meta property="og:image" content="https://brewsphere.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='10' fill='%23f4b740'/%3E%3Cellipse cx='20' cy='20' rx='18' ry='6' fill='none' stroke='%23f4b740' stroke-width='2' transform='rotate(-20 20 20)'/%3E%3C/svg%3E">
+<script type="application/ld+json" id="ldjson">
+{
+  "@context": "https://schema.org",
+  "@type": "Brewery",
+  "name": "Brewsphere",
+  "alternateName": "Brewsphere Craft Brewery",
+  "url": "https://brewsphere.com/",
+  "image": "https://brewsphere.com/og-image.png",
+  "slogan": "Drink Your Style, Drive Your Passion",
+  "description": "โรงผลิตคราฟท์เบียร์ไทย เจ้าของแบรนด์ Brewsphere จำหน่ายแบบถัง Keg ให้ร้าน และรับผลิตเบียร์ OEM ครบวงจรตั้งแต่สูตร ต้ม หมัก บรรจุถัง จนถึงแสตมป์สรรพสามิต",
+  "areaServed": "TH",
+  "legalName": "บริษัท บริวสเฟียร์ จำกัด",
+  "email": "brewsphere.thailand@gmail.com",
+  "telephone": ["+66880143659", "+66873573730"],
+  "address": {"@type": "PostalAddress", "streetAddress": "70/658 หมู่ 3 ต.คลองหนึ่ง", "addressLocality": "อ.คลองหลวง", "addressRegion": "ปทุมธานี", "postalCode": "12120", "addressCountry": "TH"},
+  "knowsAbout": ["คราฟท์เบียร์", "คราฟท์เบียร์ไทย", "Hazy IPA", "West Coast IPA", "Imperial Stout", "รับผลิตเบียร์ OEM", "Contract brewing", "บรรจุถัง Keg", "แสตมป์สรรพสามิต"],
+  "brand": [{"@type":"Brand","name":"Sphere The Signature"},{"@type":"Brand","name":"Hopstar"},{"@type":"Brand","name":"Lose Control"},{"@type":"Brand","name":"Hype-X IPA"},{"@type":"Brand","name":"Stardust"},{"@type":"Brand","name":"Smoke in Sphere"},{"@type":"Brand","name":"Juniper"}]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#05060a; --bg2:#0b0e17; --line:#1c2233; --text:#e9ecf3; --muted:#9aa3b8;
+    --amber:#f4b740; --amber2:#ffd27a; --line-green:#06C755; --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Bai Jamjuree",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  #stars{position:fixed;inset:0;z-index:-1;pointer-events:none}
+  #pagebg{position:fixed;inset:0;z-index:-2;background:center/cover no-repeat;display:none}
+  #pagebg::after{content:"";position:absolute;inset:0;background:rgba(5,6,10,.78)}
+  body.has-pagebg{background:transparent}
+  body.has-pagebg #pagebg{display:block}
+  body.has-pagebg #stars{opacity:.35}
+  .pre{white-space:pre-line}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:rgba(5,6,10,.78);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:.12em}
+  .bebas .logo{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:28px;letter-spacing:.1em}
+  .logo svg,.logo img{width:34px;height:34px;object-fit:contain}
+  .menu{display:flex;gap:26px;font-size:15px;color:var(--muted)}
+  .menu a:hover{color:var(--amber)}
+  @media(max-width:760px){.menu{display:none}}
+
+  /* hero */
+  .hero{min-height:88vh;display:flex;align-items:center;text-align:center;position:relative;background-size:cover;background-position:center}
+  .hero.has-img::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,6,10,.55),rgba(5,6,10,.85) 85%,var(--bg))}
+  .hero .wrap{width:100%;position:relative}
+  .orb{width:180px;height:180px;margin:0 auto 32px;border-radius:50%;
+    background:radial-gradient(circle at 32% 30%,var(--amber2),var(--amber) 35%,#9a5a0c 70%,#2a1604 100%);
+    box-shadow:0 0 80px rgba(244,183,64,.35),inset -20px -20px 50px rgba(0,0,0,.45);position:relative;animation:float 6s ease-in-out infinite}
+  .orb::after{content:"";position:absolute;inset:-26px;border-radius:50%;border:1px solid rgba(244,183,64,.35);transform:rotateX(70deg)}
+  .hero-logo{width:170px;height:170px;margin:0 auto 26px;object-fit:contain;filter:drop-shadow(0 0 40px rgba(244,183,64,.45));animation:float 6s ease-in-out infinite}
+  @media(max-width:480px){h1{letter-spacing:.04em;font-size:34px}.bebas h1{font-size:68px}.hero-logo{width:130px!important;height:130px!important}}
+  @keyframes float{50%{transform:translateY(-12px)}}
+  h1{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:clamp(38px,8vw,84px);letter-spacing:.1em;line-height:1.1}
+  .bebas h1{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:clamp(70px,13vw,150px);letter-spacing:.08em;line-height:1}
+  .slogan{font-family:"Space Grotesk",sans-serif;color:var(--amber);letter-spacing:.32em;text-transform:uppercase;font-size:clamp(12px,1.6vw,16px);margin-top:14px}
+  .tag{font-size:clamp(18px,2.6vw,24px);color:#c8cedb;margin:22px auto 36px;max-width:680px}
+  .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;font-weight:600;transition:.2s;border:0;cursor:pointer;font:inherit;font-weight:600}
+  .btn.primary{background:var(--amber);color:#1a1205}
+  .btn.primary:hover{background:var(--amber2)}
+  .btn.ghost{border:1px solid var(--line);color:var(--text);background:rgba(5,6,10,.4)}
+  .btn.ghost:hover{border-color:var(--amber);color:var(--amber)}
+  .btn.line{background:var(--line-green);color:#fff}
+  .btn.line:hover{filter:brightness(1.08)}
+  .btn svg{width:20px;height:20px}
+
+  section{padding:96px 0}
+  .eyebrow{font-family:"Space Grotesk",sans-serif;color:var(--amber);letter-spacing:.2em;font-size:13px;margin-bottom:10px}
+  h2{font-size:clamp(28px,4vw,40px);margin-bottom:20px;line-height:1.3}
+  .lead{color:var(--muted);max-width:720px;font-size:18px}
+
+  /* about */
+  .about{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+  .about.has-img{grid-template-columns:1.1fr .9fr}
+  .about-img{border-radius:20px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3}
+  .about-img img{width:100%;height:100%;object-fit:cover}
+  @media(max-width:820px){.about.has-img{grid-template-columns:1fr}}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+  @media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .stat b{display:block;font-family:"Space Grotesk",sans-serif;font-size:34px;color:var(--amber);line-height:1.3}
+  .stat span{color:var(--muted)}
+  
+
+
+  /* products */
+  .prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-top:40px}
+  .pc{background:var(--bg2);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+  .pc:hover{border-color:rgba(244,183,64,.5);transform:translateY(-4px)}
+  .pv{aspect-ratio:1/1;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 45%,#1a1f2e,#07080d 75%)}
+  .pv img.lbl{width:100%;height:100%;object-fit:contain;padding:14px}
+  .pv .planet{width:58%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 32% 30%,var(--c1),var(--c2) 45%,#07080d 100%);box-shadow:0 0 70px var(--c2);display:grid;place-items:center}
+  .pv .planet img{width:46%;opacity:.9}
+  .pv .ring{position:absolute;width:86%;height:24%;border:1px solid var(--c1);opacity:.45;border-radius:50%;transform:rotate(-18deg)}
+  .pb{padding:18px 20px 22px;flex:1}
+  .pser{font-family:"Space Grotesk",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
+  .pname{font-family:"Space Grotesk",sans-serif;font-size:24px;line-height:1.15;margin:4px 0 8px}
+  .bebas .pname{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:36px;letter-spacing:.04em;line-height:1.05}
+  .pmeta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px;font-size:14px}
+  .pabv{background:rgba(244,183,64,.14);color:var(--amber2);padding:2px 10px;border-radius:99px;font-weight:600}
+  .chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+  .chip{font-size:12px;border:1px solid var(--line);color:var(--muted);padding:2px 10px;border-radius:99px}
+  .pdesc{color:var(--muted);font-size:14px}
+
+  .mission{margin-top:26px;border-left:3px solid var(--amber);padding:6px 0 6px 18px;color:#c8cedb;font-size:17px}
+  /* why */
+  .quote{font-family:"Space Grotesk",sans-serif;font-size:clamp(22px,3.4vw,38px);font-weight:700;line-height:1.3;margin:10px 0 0;max-width:900px}
+  .quote::before{content:"“";color:var(--amber)}.quote::after{content:"”";color:var(--amber)}
+  .feat{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .feat h3{font-size:19px;margin-bottom:10px}
+  .feat ul{list-style:none;color:var(--muted);font-size:15px}
+  .feat li{padding-left:18px;position:relative;margin-bottom:6px}
+  .feat li::before{content:"";position:absolute;left:0;top:.7em;width:7px;height:7px;border-radius:50%;background:var(--amber)}
+  .clients{margin-top:56px;text-align:center}
+  .clients h3{font-size:22px;margin-bottom:6px}
+  .clients p{color:var(--muted);font-size:14px;margin-bottom:20px}
+  .clients .panel{background:#fff;border-radius:20px;padding:14px;max-width:1000px;margin:0 auto}
+  .clients img{width:100%;border-radius:10px}
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+  .strip figure{border-radius:16px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;margin:0}
+  .strip img{width:100%;height:100%;object-fit:cover}
+  @media(max-width:700px){.strip{grid-template-columns:1fr 1fr}.strip figure:last-child{display:none}}
+
+  /* cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:40px}
+  .card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.25s}
+  .card:hover{border-color:rgba(244,183,64,.5);transform:translateY(-4px)}
+  .ic{width:44px;height:44px;border-radius:12px;background:rgba(244,183,64,.12);display:grid;place-items:center;margin-bottom:16px}
+  .ic svg{width:22px;height:22px;stroke:var(--amber);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:20px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15px}
+
+  /* gallery */
+  .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:40px}
+  .gi{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:.25s;text-align:left;color:inherit;font:inherit;padding:0}
+  .gi:hover{border-color:rgba(244,183,64,.5);transform:translateY(-4px)}
+  .gi .im{aspect-ratio:4/3;background:#10141f;overflow:hidden}
+  .gi .im img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .gi:hover .im img{transform:scale(1.05)}
+  .gi .tx{padding:14px 18px 18px}
+  .gi small{color:var(--amber);font-size:13px}
+  .gi h4{font-size:17px;line-height:1.4;margin-top:2px}
+  .more{text-align:center;margin-top:30px}
+  .gal-empty{color:var(--muted);border:1px dashed var(--line);border-radius:var(--radius);padding:40px;text-align:center;margin-top:30px}
+
+  #lb{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:20px}
+  #lb.on{display:flex}
+  .lbin{max-width:1000px;width:100%;text-align:center}
+  .lbin img{max-height:72vh;margin:0 auto;border-radius:12px}
+  .lbin h4{font-size:20px;margin-top:16px}
+  .lbin small{color:var(--amber)}
+  .lbin p{color:var(--muted);max-width:640px;margin:6px auto 0}
+  .lbx{position:absolute;background:rgba(255,255,255,.1);border:0;color:#fff;width:46px;height:46px;border-radius:50%;font-size:22px;cursor:pointer}
+  .lbx:hover{background:rgba(255,255,255,.2)}
+  #lbClose{top:18px;right:18px}
+  #lbPrev{left:14px;top:50%;transform:translateY(-50%)}
+  #lbNext{right:14px;top:50%;transform:translateY(-50%)}
+
+  /* process */
+  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:40px}
+  .step{counter-increment:s;border-top:2px solid var(--line);padding-top:18px;position:relative}
+  .step::before{content:counter(s,decimal-leading-zero);font-family:"Space Grotesk",sans-serif;color:var(--amber);font-size:14px;letter-spacing:.1em}
+  .step::after{content:"";position:absolute;top:-2px;left:0;width:40px;height:2px;background:var(--amber)}
+  .step h4{font-size:17px;margin:6px 0 4px}
+  .step p{color:var(--muted);font-size:14px}
+
+  /* contact */
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+  @media(max-width:800px){.contact{grid-template-columns:1fr}}
+  .crow{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}
+  .crow:last-child{border:0}
+  .crow small{display:block;color:var(--muted);font-size:13px}
+  .crow svg{width:22px;height:22px;stroke:var(--amber);fill:none;stroke-width:2;margin-top:4px;flex-shrink:0}
+  .crow a:hover{color:var(--amber)}
+  .mapbox{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+  .mapbox p{color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);padding:32px 0 90px;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  /* LINE floating */
+  #lineFab{position:fixed;right:18px;bottom:18px;z-index:40;background:var(--line-green);color:#fff;border-radius:999px;padding:12px 18px;display:flex;align-items:center;gap:8px;font-weight:700;box-shadow:0 8px 30px rgba(6,199,85,.35);transition:.2s}
+  #lineFab:hover{transform:translateY(-3px)}
+  #lineFab svg{width:24px;height:24px}
+
+  /* age gate */
+  #gate{position:fixed;inset:0;z-index:80;background:rgba(5,6,10,.97);display:grid;place-items:center;padding:24px}
+  #gate.hide{display:none}
+  .gbox{max-width:420px;text-align:center;background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:40px 32px}
+  .gbox img,.gbox svg{width:56px;height:56px;margin:0 auto;object-fit:contain}
+  .gbox h3{font-size:24px;margin:16px 0 8px}
+  .gbox p{color:var(--muted);margin-bottom:24px}
+  #gmsg{margin-top:16px;color:#ff8a7a;display:none}
+</style>
+</head>
+<body>
+<div id="pagebg"></div>
+<canvas id="stars"></canvas>
+
+<!-- ยืนยันอายุ -->
+<div id="gate">
+  <div class="gbox">
+    <span class="logoMark"></span>
+    <h3>คุณอายุ 20 ปีขึ้นไปหรือไม่?</h3>
+    <p>เว็บไซต์นี้มีเนื้อหาเกี่ยวกับเครื่องดื่มแอลกอฮอล์<br>สำหรับผู้มีอายุ 20 ปีบริบูรณ์ขึ้นไปเท่านั้น</p>
+    <div class="btns">
+      <button class="btn primary" id="yes">ใช่ อายุ 20+</button>
+      <button class="btn ghost" id="no">ไม่ใช่</button>
+    </div>
+    <div id="gmsg">ขออภัย เว็บไซต์นี้สำหรับผู้มีอายุ 20 ปีขึ้นไปเท่านั้น</div>
+  </div>
+</div>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo"><span class="logoMark"></span><span>BREWSPHERE</span></a>
+    <div class="menu">
+      <a href="#about">เกี่ยวกับเรา</a>
+      <a href="#products">ผลิตภัณฑ์</a>
+      <a href="#services">บริการ</a>
+      <a href="#why">ทำไมต้องเรา</a>
+      <a href="#gallery">กิจกรรม</a>
+      <a href="#process">ขั้นตอน</a>
+      <a href="#contact">ติดต่อ</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <img class="hero-logo logoImg" alt="Brewsphere logo" width="170" height="170">
+    <h1 data-t="heroTitle">BREWSPHERE</h1>
+    <div class="slogan" data-t="slogan">Drink Your Style · Drive Your Passion</div>
+    <p class="tag pre" data-t="heroTagline">โรงผลิตคราฟท์เบียร์ไทย เจ้าของแบรนด์ Brewsphere
+และรับผลิตเบียร์ OEM ตามสูตรของคุณ</p>
+    <div class="btns">
+      <a class="btn line lineLink" target="_blank" rel="noopener"><span class="lineIcon"></span>แอด LINE สอบถาม</a>
+      <a href="#gallery" class="btn ghost">ดูกิจกรรม</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about has-img" id="aboutWrap">
+      <div>
+        <div class="eyebrow">ABOUT</div>
+        <h2 data-t="aboutTitle">คราฟท์เบียร์ไทย ที่ใส่ใจทุกขั้นตอน</h2>
+        <p class="lead pre" data-t="aboutText">Brewsphere เกิดจากการรวมตัวของผู้ประกอบการอิสระที่เชี่ยวชาญการดำเนินงาน Brewpub และโรงเบียร์ขนาดเล็กถึง Nano Brewery โรงผลิตของเราตั้งอยู่ที่ปทุมธานี ใกล้ฟิวเจอร์พาร์ค รังสิต
+
+ด้วยประสบการณ์กว่า 5 ปี เราคัดสรรวัตถุดิบคุณภาพเพื่อสร้างสรรค์เบียร์ที่มีเอกลักษณ์และคุณภาพสม่ำเสมอ ทั้งเบียร์แบรนด์ Brewsphere ของเราเอง และการรับผลิตเบียร์ OEM ให้แบรนด์ที่อยากมีเบียร์ของตัวเอง ครบวงจรตั้งแต่วางสูตร ต้ม หมัก บรรจุถัง จนถึงยื่นเอกสารและติดแสตมป์สรรพสามิต</p>
+        <blockquote class="mission"><span class="eyebrow" style="display:block;margin-bottom:6px">OUR MISSION</span><span class="pre" data-t="missionText">พันธกิจของเราคือช่วยให้ลูกค้าดำเนินธุรกิจได้อย่างราบรื่น ไม่ต้องกังวลเรื่องการบริหารโรงเบียร์ เพื่อให้โฟกัสกับการเติบโตของธุรกิจได้อย่างมั่นใจ</span></blockquote>
+      </div>
+      <div class="about-img" id="aboutImg"><img src="images/award.jpg" alt="ทีม Brewsphere ในงาน Asia Beer Championship 2025" loading="lazy"></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b data-t="stat1Value">5+ ปี</b><span data-t="stat1Label">ประสบการณ์ด้านการผลิตเบียร์</span></div>
+      <div class="stat"><b data-t="stat2Value">7</b><span data-t="stat2Label">เบียร์แบรนด์ Brewsphere</span></div>
+      <div class="stat"><b data-t="stat3Value">OEM</b><span data-t="stat3Label">รับผลิตตามสูตรของคุณ ครบวงจร</span></div>
+      <div class="stat"><b data-t="stat4Value">8</b><span data-t="stat4Label">ถังหมัก</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="wrap">
+    <div class="eyebrow">OUR BEERS</div>
+    <h2 data-t="productsTitle">เบียร์ของ Brewsphere</h2>
+    <p class="lead pre" data-t="productsText">คราฟท์เบียร์ที่ผลิตในประเทศไทย จำหน่ายแบบถัง Keg 20 ลิตร สำหรับร้านอาหาร บาร์ และตัวแทนจำหน่าย</p>
+    <div class="prods" id="prdGrid">
+      <article class="pc"><div class="pv"></div><div class="pb"><div class="pser">The Signature</div><h3 class="pname">Sphere The Signature</h3><div class="pmeta"><span>International Lager</span><span class="pabv">ABV 4.9%</span></div><div class="chips"><span class="chip">Crisp</span><span class="chip">Refreshing</span><span class="chip">Crushable</span></div><p class="pdesc">ลาเกอร์สไตล์สากล บอดี้เบา สะอาด จบแห้ง เบียร์ซิกเนเจอร์ของ Brewsphere</p></div></article>
+      <article class="pc"><div class="pv"></div><div class="pb"><div class="pser">The Special Star</div><h3 class="pname">Hopstar</h3><div class="pmeta"><span>Hazy IPA</span><span class="pabv">ABV 6.7%</span></div><div class="chips"><span class="chip">Citrus</span><span class="chip">Sweet Fruit</span></div><p class="pdesc">Hazy IPA เนื้อนุ่ม กลิ่นฮอปส์ผลไม้เมืองร้อน ส้ม และผลไม้เนื้อนุ่ม ความขมต่ำ</p></div></article>
+      <article class="pc"><div class="pv"></div><div class="pb"><div class="pser">The Special Star</div><h3 class="pname">Lose Control</h3><div class="pmeta"><span>West Coast IPA</span><span class="pabv">ABV 6.8%</span></div><div class="chips"><span class="chip">Moderate Bitterness</span><span class="chip">Old School Hops</span></div><p class="pdesc">West Coast IPA ดรายฮอปเข้มข้น ผลิตฉลองครบรอบ 1 ปีของ Brewsphere กลิ่นเปลือกส้ม ผลไม้เมืองร้อน และสน ขมกำลังดี จบแห้ง</p></div></article>
+      <article class="pc"><div class="pv"></div><div class="pb"><div class="pser">Celestial Series</div><h3 class="pname">Hype-X IPA</h3><div class="pmeta"><span>IPA</span><span class="pabv">ABV 6.4%</span></div><div class="chips"><span class="chip">Tropical</span><span class="chip">Hoppy</span><span class="chip">Citrus</span></div><p class="pdesc">IPA กลิ่นผลไม้เมืองร้อนและส้ม ความขมต่ำ เหมาะเป็นตัวแรกสำหรับคนที่เริ่มรู้จัก IPA</p></div></article>
+      <article class="pc"><div class="pv"></div><div class="pb"><div class="pser">Celestial Series</div><h3 class="pname">Stardust</h3><div class="pmeta"><span>Hazy Pale Ale</span><span class="pabv">ABV 5.5%</span></div><div class="chips"><span class="chip">Hoppy</span><span class="chip">Juicy</span><span class="chip">Tropical</span></div><p class="pdesc">Hazy Pale Ale ขุ่น ความขมต่ำ กลิ่นฮอปส์ส้มและผลไม้เมืองร้อน</p></div></article>
+      <article class="pc"><div class="pv"></div><div class="pb"><div class="pser">Celestial Series</div><h3 class="pname">Smoke in Sphere</h3><div class="pmeta"><span>Imperial Stout</span><span class="pabv">ABV 8.3%</span></div><div class="chips"><span class="chip">Smoke</span><span class="chip">Dark</span><span class="chip">Malty</span></div><p class="pdesc">Imperial Stout มอลต์เข้มข้น กลิ่นรมควัน กาแฟคั่ว และดาร์กช็อกโกแลต</p></div></article>
+      <article class="pc"><div class="pv"></div><div class="pb"><h3 class="pname">Juniper</h3><div class="pmeta"><span>American Wheat</span><span class="pabv">ABV 5.0%</span></div><div class="chips"><span class="chip">Fluffy</span><span class="chip">Lemony</span><span class="chip">Juniper Berry</span></div><p class="pdesc">American Wheat เนื้อนุ่ม กลิ่นเลมอนและจูนิเปอร์เบอร์รี่</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">SERVICES</div>
+    <h2>บริการของเรา</h2>
+    <div class="grid" id="svcGrid">
+      <div class="card"><h3>เบียร์ Brewsphere สำหรับร้าน</h3><p>จำหน่ายเบียร์แบรนด์ Brewsphere แบบถัง Keg 20 ลิตร ให้ร้านอาหาร บาร์ และตัวแทนจำหน่าย</p></div>
+      <div class="card"><h3>ผลิตตามสูตร (OEM)</h3><p>รับผลิตคราฟท์เบียร์ตามสูตรของคุณ หรือพัฒนาสูตรใหม่ร่วมกัน พร้อมแจกแจงต้นทุนวัตถุดิบให้ชัดเจน</p></div>
+      <div class="card"><h3>บรรจุถัง (Keg)</h3><p>บรรจุเบียร์ลงถังพร้อมส่ง ตรวจสอบค่าการหมักก่อนบรรจุทุกครั้ง</p></div>
+      <div class="card"><h3>เอกสารและแสตมป์</h3><p>ดำเนินเรื่องเอกสารสรรพสามิตและติดแสตมป์ให้ถูกต้องตามกฎหมาย</p></div>
+      <div class="card"><h3>จัดส่ง</h3><p>บริการจัดส่งถังเบียร์ถึงร้านหรือคลังสินค้าของคุณ</p></div>
+      <div class="card"><h3>ระบบเบียร์สดและบาร์</h3><p>ติดตั้งระบบเบียร์สดพร้อมหัวจ่ายสำหรับร้านและงานอีเวนต์ ติดต่อขอใบเสนอราคาได้</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="eyebrow">WHY US</div>
+    <h2 data-t="whyTitle">ทำไมต้อง Brewsphere</h2>
+    <p class="quote" data-t="quote">Great beer, Great service. We’ll bring the bar to you!</p>
+    <div class="strip">
+      <figure><img src="images/booth.jpg" alt="บูธเบียร์สด Brewsphere" loading="lazy"></figure>
+      <figure><img src="images/brewhouse.jpg" alt="ทีมงานในโรงผลิต Brewsphere" loading="lazy"></figure>
+      <figure><img src="images/kegs.jpg" alt="ถัง Slim Keg 20 ลิตร" loading="lazy"></figure>
+    </div>
+    <div class="grid" id="featGrid">
+      <div class="feat"><div class="ic"></div><h3>มาตรฐานคุณภาพ</h3><ul><li>ถัง Slim Keg 20 ลิตร หัว A-Type</li><li>สแตนเลส SUS 304 Food Grade รองรับงานสรรพสามิต</li><li>เก็บเบียร์ที่ 0–4 °C</li><li>อายุเบียร์ 6 เดือน</li></ul></div>
+      <div class="feat"><div class="ic"></div><h3>การจัดส่ง</h3><ul><li>สั่งขั้นต่ำ 2 ถัง</li><li>1–10 ถัง จัดส่งภายใน 2 วันทำการ</li><li>มากกว่า 10 ถัง จัดส่งภายใน 20 วันทำการ</li><li>ส่งจันทร์–ศุกร์ 13:00–17:00 (นอกเวลาโปรดแจ้งล่วงหน้า)</li></ul></div>
+      <div class="feat"><div class="ic"></div><h3>การรับประกัน</h3><ul><li>ดูแลอุปกรณ์เบียร์ตลอดอายุการใช้งาน</li><li>รับเคลมกรณีเบียร์เสียหายทุกรูปแบบ</li></ul></div>
+      <div class="feat"><div class="ic"></div><h3>บริการและซัพพอร์ต</h3><ul><li>ช่วยเหลือถึงหน้างานหรือทางไกลทุกกรณีเร่งด่วน</li><li>บริการทำความสะอาดระบบเบียร์</li><li>อบรมการใช้งานอุปกรณ์</li></ul></div>
+    </div>
+    <div class="clients">
+      <div class="eyebrow">CONSUMER SATISFACTION</div>
+      <h3 data-t="clientsTitle">ร้านและแบรนด์ที่ไว้วางใจเรา</h3>
+      <p>ร้านอาหาร บาร์ และแบรนด์คราฟท์เบียร์ที่เลือกใช้เบียร์และบริการของ Brewsphere</p>
+      <div class="panel"><img id="clientsImg" src="images/clients.jpg" alt="โลโก้ร้านและแบรนด์ลูกค้าของ Brewsphere" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="eyebrow">ACTIVITIES</div>
+    <h2 data-t="galleryTitle">กิจกรรมของเรา</h2>
+    <p class="lead pre" data-t="galleryText">บรรยากาศการทำงาน งานอีเวนต์ และกิจกรรมต่าง ๆ ของ Brewsphere</p>
+    <div class="gal" id="galGrid"></div>
+    <div class="more" id="galMore" hidden><button class="btn ghost" id="galMoreBtn">ดูกิจกรรมเพิ่มเติม</button></div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="eyebrow">PROCESS</div>
+    <h2>ขั้นตอนการทำงาน</h2>
+    <div class="steps">
+      <div class="step"><h4>ปรึกษาสูตร</h4><p>คุยสไตล์เบียร์และปริมาณที่ต้องการ</p></div>
+      <div class="step"><h4>เสนอราคา</h4><p>แจกแจงวัตถุดิบ บรรจุภัณฑ์ และค่าส่ง</p></div>
+      <div class="step"><h4>จองคิวต้ม</h4><p>ยืนยันวันผลิตในตารางคิว</p></div>
+      <div class="step"><h4>หมักและตรวจคุณภาพ</h4><p>บันทึกค่าการหมักทุกช่วง</p></div>
+      <div class="step"><h4>บรรจุและแสตมป์</h4><p>บรรจุถังและติดแสตมป์สรรพสามิต</p></div>
+      <div class="step"><h4>ส่งมอบ</h4><p>จัดส่งถึงปลายทาง</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">CONTACT</div>
+    <h2>ติดต่อเรา</h2>
+    <div class="contact">
+      <div id="contactList"></div>
+      <div class="mapbox">
+        <div>
+          <h3 style="margin-bottom:8px">ที่ตั้งโรงผลิต</h3>
+          <p class="pre" data-t="address"></p>
+          <p style="margin-top:8px" id="hoursRow">เวลาทำการ: <span data-t="hours">จันทร์–ศุกร์ 09:00–18:00</span><br>กรุณานัดหมายล่วงหน้าก่อนเข้าเยี่ยมชม</p>
+        </div>
+        <div class="btns" style="justify-content:flex-start">
+          <a class="btn primary" id="mapBtn" target="_blank" rel="noopener">เปิดใน Google Maps</a>
+          <a class="btn line lineLink" target="_blank" rel="noopener"><span class="lineIcon"></span>แชท LINE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Brewsphere. All rights reserved.</span>
+    <span>ไม่จำหน่ายแก่บุคคลอายุต่ำกว่า 20 ปีบริบูรณ์</span>
+  </div>
+</footer>
+
+<a id="lineFab" class="lineLink" target="_blank" rel="noopener"><span class="lineIcon"></span>แอด LINE</a>
+
+<div id="lb">
+  <button class="lbx" id="lbClose" aria-label="ปิด">✕</button>
+  <button class="lbx" id="lbPrev" aria-label="ก่อนหน้า">‹</button>
+  <button class="lbx" id="lbNext" aria-label="ถัดไป">›</button>
+  <div class="lbin"><img id="lbImg" alt=""><small id="lbDate"></small><h4 id="lbTitle"></h4><p id="lbCap" class="pre"></p></div>
+</div>
+
+<script>
+/* ════════ ตั้งค่า: วาง URL ของ Apps Script Web App (ลงท้าย /exec) ════════ */
+const API_URL = '';
+/* ═══════════════════════════════════════════════════════════════════ */
+
+// เนื้อหาสำรอง ใช้ตอนยังไม่ได้ต่อ API หรือโหลดไม่สำเร็จ
+const FALLBACK = {
+  settings: {
+    heroTitle: 'BREWSPHERE',
+    heroTagline: 'โรงผลิตคราฟท์เบียร์ไทย เจ้าของแบรนด์ Brewsphere\nและรับผลิตเบียร์ OEM ตามสูตรของคุณ', slogan: 'Drink Your Style · Drive Your Passion',
+    aboutTitle: 'คราฟท์เบียร์ไทย ที่ใส่ใจทุกขั้นตอน',
+    aboutText: "Brewsphere เกิดจากการรวมตัวของผู้ประกอบการอิสระที่เชี่ยวชาญการดำเนินงาน Brewpub และโรงเบียร์ขนาดเล็กถึง Nano Brewery โรงผลิตของเราตั้งอยู่ที่ปทุมธานี ใกล้ฟิวเจอร์พาร์ค รังสิต\n\nด้วยประสบการณ์กว่า 5 ปี เราคัดสรรวัตถุดิบคุณภาพเพื่อสร้างสรรค์เบียร์ที่มีเอกลักษณ์และคุณภาพสม่ำเสมอ ทั้งเบียร์แบรนด์ Brewsphere ของเราเอง และการรับผลิตเบียร์ OEM ให้แบรนด์ที่อยากมีเบียร์ของตัวเอง ครบวงจรตั้งแต่วางสูตร ต้ม หมัก บรรจุถัง จนถึงยื่นเอกสารและติดแสตมป์สรรพสามิต", missionText: "พันธกิจของเราคือช่วยให้ลูกค้าดำเนินธุรกิจได้อย่างราบรื่น ไม่ต้องกังวลเรื่องการบริหารโรงเบียร์ เพื่อให้โฟกัสกับการเติบโตของธุรกิจได้อย่างมั่นใจ",
+    stat1Value: '5+ ปี', stat1Label: 'ประสบการณ์ด้านการผลิตเบียร์', stat4Value: '8', stat4Label: 'ถังหมัก', stat2Value: '7', stat2Label: 'เบียร์แบรนด์ Brewsphere',
+    stat3Value: 'OEM', stat3Label: 'รับผลิตตามสูตรของคุณ ครบวงจร',
+    productsTitle: 'เบียร์ของ Brewsphere', productsText: 'คราฟท์เบียร์ที่ผลิตในประเทศไทย จำหน่ายแบบถัง Keg 20 ลิตร สำหรับร้านอาหาร บาร์ และตัวแทนจำหน่าย',
+    whyTitle: 'ทำไมต้อง Brewsphere', quote: "Great beer, Great service. We’ll bring the bar to you!", clientsTitle: 'ร้านและแบรนด์ที่ไว้วางใจเรา',
+    galleryTitle: 'กิจกรรมของเรา', galleryText: 'บรรยากาศการทำงาน งานอีเวนต์ และกิจกรรมต่าง ๆ ของ Brewsphere',
+    lineId: '@brewsphere', phone: '088-014-3659 / 087-357-3730', email: 'brewsphere.thailand@gmail.com', facebookUrl: '', instagramUrl: '',
+    address: "บริษัท บริวสเฟียร์ จำกัด\n70/658 หมู่ 3 ต.คลองหนึ่ง อ.คลองหลวง จ.ปทุมธานี\n(ใกล้ฟิวเจอร์พาร์ค รังสิต)", hours: 'จันทร์–ศุกร์ 09:00–18:00', mapUrl: ''
+  },
+  services: [
+    { icon: 'keg', title: 'เบียร์ Brewsphere สำหรับร้าน', text: 'จำหน่ายเบียร์แบรนด์ Brewsphere แบบถัง Keg 20 ลิตร ให้ร้านอาหาร บาร์ และตัวแทนจำหน่าย' },
+    { icon: 'flask', title: 'ผลิตตามสูตร (OEM)', text: 'ผลิตเบียร์ตามสูตรของคุณ หรือพัฒนาสูตรใหม่ร่วมกัน พร้อมแจกแจงต้นทุนวัตถุดิบให้ชัดเจน' },
+    { icon: 'keg', title: 'บรรจุถัง (Keg)', text: 'บรรจุเบียร์ลงถังพร้อมส่ง ตรวจสอบค่าการหมักก่อนบรรจุทุกครั้ง' },
+    { icon: 'doc', title: 'เอกสารและแสตมป์', text: 'ดำเนินเรื่องเอกสารสรรพสามิตและติดแสตมป์ให้ถูกต้องตามกฎหมาย' },
+    { icon: 'truck', title: 'จัดส่ง', text: 'บริการจัดส่งถังเบียร์ถึงร้านหรือคลังสินค้าของคุณ' },
+    { icon: 'calendar', title: 'ระบบเบียร์สดและบาร์', text: 'ติดตั้งระบบเบียร์สดพร้อมหัวจ่ายสำหรับร้านและงานอีเวนต์ ติดต่อขอใบเสนอราคาได้' }
+  ],
+  features: [{"icon": "star", "title": "มาตรฐานคุณภาพ", "text": "ถัง Slim Keg 20 ลิตร หัว A-Type\nสแตนเลส SUS 304 Food Grade รองรับงานสรรพสามิต\nเก็บเบียร์ที่ 0–4 °C\nอายุเบียร์ 6 เดือน"}, {"icon": "truck", "title": "การจัดส่ง", "text": "สั่งขั้นต่ำ 2 ถัง\n1–10 ถัง จัดส่งภายใน 2 วันทำการ\nมากกว่า 10 ถัง จัดส่งภายใน 20 วันทำการ\nส่งจันทร์–ศุกร์ 13:00–17:00 (นอกเวลาโปรดแจ้งล่วงหน้า)"}, {"icon": "doc", "title": "การรับประกัน", "text": "ดูแลอุปกรณ์เบียร์ตลอดอายุการใช้งาน\nรับเคลมกรณีเบียร์เสียหายทุกรูปแบบ"}, {"icon": "users", "title": "บริการและซัพพอร์ต", "text": "ช่วยเหลือถึงหน้างานหรือทางไกลทุกกรณีเร่งด่วน\nบริการทำความสะอาดระบบเบียร์\nอบรมการใช้งานอุปกรณ์"}],
+  products: [{"series": "The Signature", "name": "Sphere The Signature", "style": "International Lager", "abv": "4.9", "notes": "Crisp, Refreshing, Crushable", "desc": "ลาเกอร์สไตล์สากล บอดี้เบา สะอาด จบแห้ง เบียร์ซิกเนเจอร์ของ Brewsphere"}, {"series": "The Special Star", "name": "Hopstar", "style": "Hazy IPA", "abv": "6.7", "notes": "Citrus, Sweet Fruit", "desc": "Hazy IPA เนื้อนุ่ม กลิ่นฮอปส์ผลไม้เมืองร้อน ส้ม และผลไม้เนื้อนุ่ม ความขมต่ำ"}, {"series": "The Special Star", "name": "Lose Control", "style": "West Coast IPA", "abv": "6.8", "notes": "Moderate Bitterness, Old School Hops", "desc": "West Coast IPA ดรายฮอปเข้มข้น ผลิตฉลองครบรอบ 1 ปีของ Brewsphere กลิ่นเปลือกส้ม ผลไม้เมืองร้อน และสน ขมกำลังดี จบแห้ง"}, {"series": "Celestial Series", "name": "Hype-X IPA", "style": "IPA", "abv": "6.4", "notes": "Tropical, Hoppy, Citrus", "desc": "IPA กลิ่นผลไม้เมืองร้อนและส้ม ความขมต่ำ เหมาะเป็นตัวแรกสำหรับคนที่เริ่มรู้จัก IPA"}, {"series": "Celestial Series", "name": "Stardust", "style": "Hazy Pale Ale", "abv": "5.5", "notes": "Hoppy, Juicy, Tropical", "desc": "Hazy Pale Ale ขุ่น ความขมต่ำ กลิ่นฮอปส์ส้มและผลไม้เมืองร้อน"}, {"series": "Celestial Series", "name": "Smoke in Sphere", "style": "Imperial Stout", "abv": "8.3", "notes": "Smoke, Dark, Malty", "desc": "Imperial Stout มอลต์เข้มข้น กลิ่นรมควัน กาแฟคั่ว และดาร์กช็อกโกแลต"}, {"series": "", "name": "Juniper", "style": "American Wheat", "abv": "5.0", "notes": "Fluffy, Lemony, Juniper Berry", "desc": "American Wheat เนื้อนุ่ม กลิ่นเลมอนและจูนิเปอร์เบอร์รี่"}],
+  gallery: [] // ตัวอย่างรูปจะถูกสร้างอัตโนมัติด้านล่างเมื่อยังไม่ต่อ API
+};
+
+const ICONS = {
+  flask: '<path d="M9 3h6M10 3v6L4 19a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-6-10V3"/>',
+  keg: '<rect x="5" y="3" width="14" height="18" rx="3"/><path d="M5 9h14M5 15h14"/>',
+  doc: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>',
+  truck: '<path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>',
+  star: '<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
+  users: '<circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"/>',
+  calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  leaf: '<path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16zM5 21l7-7"/>'
+};
+const SVG = (p, cls) => `<svg viewBox="0 0 24 24" ${cls ? `class="${cls}"` : ''}>${p}</svg>`;
+const LINE_SVG = '<svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2.5C6.2 2.5 1.5 6.3 1.5 11c0 4.2 3.7 7.7 8.8 8.4.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s6-3.5 8.2-6c1.5-1.7 2.3-3.4 2.3-5.3 0-4.7-4.7-8.5-10.5-8.5zM8.1 13.5H6a.6.6 0 0 1-.6-.6V8.8a.6.6 0 1 1 1.2 0v3.5h1.5a.6.6 0 1 1 0 1.2zm2.2-.6a.6.6 0 1 1-1.2 0V8.8a.6.6 0 1 1 1.2 0zm5 0a.6.6 0 0 1-1.1.4l-2.1-2.9v2.5a.6.6 0 1 1-1.2 0V8.8a.6.6 0 0 1 1.1-.4l2.1 2.9V8.8a.6.6 0 1 1 1.2 0zm3.4-2.7a.6.6 0 1 1 0 1.2h-1.5v.9h1.5a.6.6 0 1 1 0 1.2h-2.1a.6.6 0 0 1-.6-.6V8.8c0-.3.3-.6.6-.6h2.1a.6.6 0 1 1 0 1.2h-1.5v.9z"/></svg>';
+const LOGO_DATA = 'data:image/png;base64,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';
+
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const driveImg = (id, w) => `https://drive.google.com/thumbnail?id=${encodeURIComponent(id)}&sz=w${w}`;
+const imgSrc = (g, w) => g.src || driveImg(g.fileId, w);
+const thaiDate = d => {
+  if (!d) return '';
+  const t = new Date(d + 'T00:00:00');
+  return isNaN(t) ? d : t.toLocaleDateString('th-TH', { day: 'numeric', month: 'long', year: 'numeric' });
+};
+
+function demoGallery() {
+  // รูปเริ่มต้นจากโบรชัวร์ (แสดงจนกว่าจะเพิ่มกิจกรรมในหน้าแอดมิน)
+  return [
+    ['award', 'Asia Beer Championship 2025', 'ทีม Brewsphere ในงาน Asia Beer Championship 2025'],
+    ['team', 'ทีม Brewsphere', 'ทีมงานผู้อยู่เบื้องหลังเบียร์ทุกถัง'],
+    ['booth', 'บูธเบียร์สด', 'บูธเบียร์สด Modern Thai Draft Beer ในงานอีเวนต์'],
+    ['events', 'กิจกรรมกับพาร์ทเนอร์', 'กิจกรรมร่วมกับร้านและแบรนด์พาร์ทเนอร์'],
+    ['brewhouse', 'ในโรงผลิต', 'ทีมงานดูแลถังหมักในโรงผลิตที่ปทุมธานี'],
+    ['oem-tank', 'งานผลิต OEM', 'ถังหมักเบียร์ OEM ของแบรนด์ลูกค้า'],
+    ['taps', 'ระบบเบียร์สด', 'ระบบหัวจ่ายเบียร์สดที่ติดตั้งให้ร้านลูกค้า'],
+    ['fermenter', 'อุปกรณ์การผลิต', 'ถังผลิตสแตนเลสพร้อมโลโก้ Brewsphere'],
+    ['kegs', 'Slim Keg 20 ลิตร', 'ถังสแตนเลส SUS 304 หัว A-Type'],
+  ].map(([f, t, c]) => ({ src: 'images/' + f + '.jpg', title: t, caption: c, date: '' }));
+}
+
+let GALLERY = [], shown = 9;
+
+function render(data) {
+  const s = Object.assign({}, FALLBACK.settings, data.settings || {});
+
+  document.querySelectorAll('[data-t]').forEach(el => { el.textContent = s[el.dataset.t] || ''; });
+
+  // โลโก้
+  const logoSrc = s.logoImage ? driveImg(s.logoImage, 400) : LOGO_DATA;
+  const logoHtml = `<img src="${logoSrc}" alt="Brewsphere">`;
+  document.querySelectorAll('.logoImg').forEach(el => el.src = logoSrc);
+  document.querySelectorAll('.logoMark').forEach(el => el.innerHTML = logoHtml);
+  document.querySelector('link[rel=icon]').href = s.logoImage ? driveImg(s.logoImage, 64) : LOGO_DATA;
+
+  // พื้นหลังทั้งเว็บ
+  if (s.pageBgImage) {
+    document.getElementById('pagebg').style.backgroundImage = `url('${driveImg(s.pageBgImage, 2000)}')`;
+    document.body.classList.add('has-pagebg');
+  }
+
+  // รูปหน้าแรก
+  const hero = document.getElementById('top');
+  if (s.heroImage) { hero.classList.add('has-img'); hero.style.backgroundImage = `url('${driveImg(s.heroImage, 2000)}')`; }
+
+  // รูปเกี่ยวกับเรา
+  const ai = document.getElementById('aboutImg');
+  if (s.aboutImage) ai.innerHTML = `<img src="${driveImg(s.aboutImage, 1200)}" alt="Brewsphere" loading="lazy">`;
+  if (s.clientsImage) document.getElementById('clientsImg').src = driveImg(s.clientsImage, 1600);
+
+  // จุดเด่น
+  const feats = (data.features && data.features.length) ? data.features : FALLBACK.features;
+  document.getElementById('featGrid').innerHTML = feats.map(f => `<div class="feat"><div class="ic">${SVG(ICONS[f.icon] || ICONS.star)}</div><h3>${esc(f.title)}</h3><ul>${String(f.text || '').split('\n').map(l => l.trim()).filter(Boolean).map(l => `<li>${esc(l)}</li>`).join('')}</ul></div>`).join('');
+
+  // ผลิตภัณฑ์
+  const prods = (data.products && data.products.length) ? data.products : FALLBACK.products;
+  const PAL = [['#ffe9a8','#f4b740'],['#ffd27a','#e8902c'],['#9ff0c0','#2fa36b'],['#a8d8ff','#3f7fe0'],['#d9c2ff','#7a4fe0'],['#d6b38a','#5a3518'],['#fff3b0','#c9b23a']];
+  document.getElementById('prdGrid').innerHTML = prods.map((x, i) => {
+    const [c1, c2] = PAL[i % PAL.length];
+    const vis = x.fileId
+      ? `<img class="lbl" src="${driveImg(x.fileId, 900)}" alt="${esc(x.name)} ${esc(x.style)}" loading="lazy">`
+      : `<div class="ring"></div><div class="planet"><img src="${LOGO_DATA}" alt=""></div>`;
+    const chips = String(x.notes || '').split(',').map(c => c.trim()).filter(Boolean).map(c => `<span class="chip">${esc(c)}</span>`).join('');
+    return `<article class="pc"><div class="pv" style="--c1:${c1};--c2:${c2}">${vis}</div><div class="pb">
+      ${x.series ? `<div class="pser">${esc(x.series)}</div>` : ''}
+      <h3 class="pname">${esc(x.name)}</h3>
+      <div class="pmeta">${x.style ? `<span>${esc(x.style)}</span>` : ''}${x.abv ? `<span class="pabv">ABV ${esc(x.abv)}%</span>` : ''}</div>
+      ${chips ? `<div class="chips">${chips}</div>` : ''}
+      ${x.desc ? `<p class="pdesc">${esc(x.desc)}</p>` : ''}</div></article>`;
+  }).join('');
+
+  // บริการ
+  const svcs = (data.services && data.services.length) ? data.services : FALLBACK.services;
+  document.getElementById('svcGrid').innerHTML = svcs.map(x =>
+    `<div class="card"><div class="ic">${SVG(ICONS[x.icon] || ICONS.star)}</div><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></div>`).join('');
+
+  // LINE OA
+  let lid = String(s.lineId || '').trim().replace(/\s/g, '');
+  if (lid && lid[0] !== '@') lid = '@' + lid;
+  const lineUrl = lid ? 'https://line.me/R/ti/p/' + encodeURIComponent(lid) : '';
+  document.querySelectorAll('.lineLink').forEach(a => { if (lineUrl) a.href = lineUrl; else a.style.display = 'none'; });
+  document.querySelectorAll('.lineIcon').forEach(el => el.innerHTML = LINE_SVG);
+
+  // ช่องทางติดต่อ
+  const rows = [];
+  if (lineUrl) rows.push(['<path d="M21 11.5a8.5 8.5 0 0 1-12.7 7.4L3 20l1.2-5A8.5 8.5 0 1 1 21 11.5z"/>', 'LINE Official Account', `<a href="${lineUrl}" target="_blank" rel="noopener">${esc(lid)}</a>`]);
+  const phones = String(s.phone || '').split('/').map(x => x.trim()).filter(Boolean);
+  if (phones.length) rows.push(['<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>', 'โทรศัพท์', phones.map(ph => `<a href="tel:${esc(ph.replace(/[^\d+]/g, ''))}">${esc(ph)}</a>`).join(' / ')]);
+  if (s.email) rows.push(['<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/>', 'อีเมล', `<a href="mailto:${esc(s.email)}">${esc(s.email)}</a>`]);
+  if (s.facebookUrl) rows.push(['<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>', 'Facebook', `<a href="${esc(s.facebookUrl)}" target="_blank" rel="noopener">Brewsphere</a>`]);
+  if (s.instagramUrl) rows.push(['<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5"/>', 'Instagram', `<a href="${esc(s.instagramUrl)}" target="_blank" rel="noopener">Brewsphere</a>`]);
+  document.getElementById('contactList').innerHTML = rows.map(([ic, label, val]) =>
+    `<div class="crow">${SVG(ic)}<div><small>${label}</small>${val}</div></div>`).join('');
+
+  if (!s.hours) document.getElementById('hoursRow').hidden = true;
+  const map = s.mapUrl || ('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(s.address && s.address[0] !== '[' ? s.address : 'Brewsphere'));
+  document.getElementById('mapBtn').href = map;
+
+  // SEO: เติมข้อมูลธุรกิจจริงลง structured data ให้ Google
+  try {
+    const ld = JSON.parse(document.getElementById('ldjson').textContent);
+    if (s.email) ld.email = s.email;
+    if (s.hours) ld.openingHours = s.hours;
+    if (s.mapUrl) ld.hasMap = s.mapUrl;
+    if (s.logoImage) ld.logo = driveImg(s.logoImage, 512);
+    const same = [s.facebookUrl, s.instagramUrl, lineUrl].filter(Boolean);
+    if (same.length) ld.sameAs = same;
+    document.getElementById('ldjson').textContent = JSON.stringify(ld);
+  } catch (e) {}
+
+  // กิจกรรม
+  GALLERY = data.gallery || [];
+  renderGallery();
+}
+
+function renderGallery() {
+  const g = document.getElementById('galGrid');
+  if (!GALLERY.length) { g.innerHTML = '<div class="gal-empty" style="grid-column:1/-1">เร็ว ๆ นี้</div>'; return; }
+  g.innerHTML = GALLERY.slice(0, shown).map((x, i) => `
+    <button class="gi" data-i="${i}">
+      <div class="im"><img src="${imgSrc(x, 800)}" alt="${esc(x.title)}" loading="lazy"></div>
+      <div class="tx"><small>${esc(thaiDate(x.date))}</small><h4>${esc(x.title)}</h4></div>
+    </button>`).join('');
+  g.querySelectorAll('.gi').forEach(b => b.onclick = () => openLb(+b.dataset.i));
+  document.getElementById('galMore').hidden = GALLERY.length <= shown;
+}
+document.getElementById('galMoreBtn').onclick = () => { shown += 9; renderGallery(); };
+
+/* lightbox */
+let lbi = 0;
+const lb = document.getElementById('lb');
+function openLb(i) {
+  lbi = (i + GALLERY.length) % GALLERY.length;
+  const x = GALLERY[lbi];
+  document.getElementById('lbImg').src = imgSrc(x, 1600);
+  document.getElementById('lbDate').textContent = thaiDate(x.date);
+  document.getElementById('lbTitle').textContent = x.title || '';
+  document.getElementById('lbCap').textContent = x.caption || '';
+  lb.classList.add('on');
+}
+const closeLb = () => lb.classList.remove('on');
+document.getElementById('lbClose').onclick = closeLb;
+document.getElementById('lbPrev').onclick = () => openLb(lbi - 1);
+document.getElementById('lbNext').onclick = () => openLb(lbi + 1);
+lb.onclick = e => { if (e.target === lb) closeLb(); };
+addEventListener('keydown', e => {
+  if (!lb.classList.contains('on')) return;
+  if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowLeft') openLb(lbi - 1);
+  if (e.key === 'ArrowRight') openLb(lbi + 1);
+});
+
+/* โหลดเนื้อหา */
+(async function () {
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  if (!API_URL) { render(Object.assign({}, FALLBACK, { gallery: demoGallery() })); return; }
+  render(Object.assign({}, FALLBACK, { gallery: demoGallery() })); // แสดงทันทีระหว่างรอ
+  try {
+    const r = await fetch(API_URL + (API_URL.includes('?') ? '&' : '?') + 'api=content');
+    const d = await r.json();
+    if (!d.gallery || !d.gallery.length) d.gallery = demoGallery();
+    render(d);
+  } catch (e) { console.warn('โหลดเนื้อหาไม่สำเร็จ ใช้เนื้อหาสำรอง', e); }
+})();
+
+/* ใช้ฟอนต์ Bebas Neue เมื่อโหลดสำเร็จ (กันตัวหนังสือล้นถ้าโหลดไม่ได้) */
+if (document.fonts) document.fonts.load('40px "Bebas Neue"').then(f => { if (f.length) document.documentElement.classList.add('bebas'); }).catch(() => {});
+
+/* ยืนยันอายุ */
+const gate = document.getElementById('gate');
+try { if (localStorage.getItem('bs_age_ok') === '1') gate.classList.add('hide'); } catch (e) {}
+document.getElementById('yes').onclick = () => { gate.classList.add('hide'); try { localStorage.setItem('bs_age_ok', '1'); } catch (e) {} };
+document.getElementById('no').onclick = () => { document.getElementById('gmsg').style.display = 'block'; };
+
+/* พื้นหลังดวงดาว */
+const c = document.getElementById('stars'), x = c.getContext('2d');
+let stars = [];
+function size() {
+  c.width = innerWidth; c.height = innerHeight;
+  stars = Array.from({ length: Math.round(innerWidth * innerHeight / 6000) }, () => ({
+    x: Math.random() * c.width, y: Math.random() * c.height, r: Math.random() * 1.3 + .2, a: Math.random() * 6, s: Math.random() * .02 + .005
+  }));
+}
+function draw() {
+  x.clearRect(0, 0, c.width, c.height);
+  for (const s of stars) {
+    s.a += s.s;
+    x.fillStyle = `rgba(255,255,255,${.35 + Math.abs(Math.sin(s.a)) * .65})`;
+    x.beginPath(); x.arc(s.x, s.y, s.r, 0, 7); x.fill();
+  }
+  requestAnimationFrame(draw);
+}
+addEventListener('resize', size); size(); draw();
+</script>
+</body>
+</html>

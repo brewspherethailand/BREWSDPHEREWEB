@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brewsphere.com/sitemap.xml
