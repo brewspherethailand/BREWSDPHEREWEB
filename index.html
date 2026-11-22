@@ -64,11 +64,17 @@
   /* nav */
   nav{position:sticky;top:0;z-index:20;background:rgba(5,6,10,.78);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  nav .menu{margin-left:auto}
   .logo{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:.12em}
   .bebas .logo{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:28px;letter-spacing:.1em}
   .logo svg,.logo img{width:34px;height:34px;object-fit:contain}
   .menu{display:flex;gap:26px;font-size:15px;color:var(--muted)}
   .menu a:hover{color:var(--amber)}
+  .login-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:14px;color:var(--muted);transition:.2s;margin-left:24px;white-space:nowrap}
+  .login-btn:hover{border-color:var(--amber);color:var(--amber)}
+  .login-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+  @media(max-width:1100px){.menu{gap:18px;font-size:14px}}
+
   @media(max-width:760px){.menu{display:none}}
 
   /* hero */
@@ -255,6 +261,7 @@
       <a href="#process">ขั้นตอน</a>
       <a href="#contact">ติดต่อ</a>
     </div>
+    <a href="admin.html" class="login-btn" rel="nofollow"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>เข้าสู่ระบบ</a>
   </div>
 </nav>
 
@@ -413,10 +420,10 @@
   <div class="lbin"><img id="lbImg" alt=""><small id="lbDate"></small><h4 id="lbTitle"></h4><p id="lbCap" class="pre"></p></div>
 </div>
 
+<script src="config.js"></script>
 <script>
-/* ════════ ตั้งค่า: วาง URL ของ Apps Script Web App (ลงท้าย /exec) ════════ */
-const API_URL = 'https://script.google.com/macros/s/AKfycbxCbJg3x0wtq6hGEQESaAVS6NJ_uNQ4HgiwC3i9QZY-DqDxqy4ioV-VM0s2S3gAlDoExw/exec'; 
-/* ═══════════════════════════════════════════════════════════════════ */
+// URL ของ Apps Script ตั้งค่าในไฟล์ config.js
+const API_URL = String(window.BREWSPHERE_API_URL || '').trim();
 
 // เนื้อหาสำรอง ใช้ตอนยังไม่ได้ต่อ API หรือโหลดไม่สำเร็จ
 const FALLBACK = {

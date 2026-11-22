@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<title>Brewsphere – เข้าสู่ระบบ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<script src="config.js"></script>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#05060a;--bg2:#0d1019;--bg3:#151a27;--line:#232a3d;--text:#e9ecf3;--muted:#9aa3b8;--amber:#f4b740;--red:#ff6b5b;--green:#33d17a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Bai Jamjuree",system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+  button,input,textarea,select{font:inherit}
+  .hide{display:none!important}
+
+  /* login */
+  #login{min-height:100vh;display:grid;place-items:center;padding:24px;
+    background:radial-gradient(ellipse at 50% 120%,#2a1a05 0%,#05060a 60%)}
+  .lbox{width:100%;max-width:360px;background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:36px 28px;text-align:center}
+  .lbox h1{letter-spacing:.14em;font-size:22px;margin:14px 0 4px}
+  .lbox p{color:var(--muted);font-size:14px;margin-bottom:22px}
+  .lbox input{width:100%;margin-bottom:12px}
+  #lerr{color:var(--red);font-size:14px;min-height:20px;margin-top:8px}
+
+  /* app */
+  header{position:sticky;top:0;z-index:10;background:rgba(5,6,10,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .top{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;max-width:960px;margin:0 auto}
+  .brand{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.1em}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:blink 1.6s infinite}
+  @keyframes blink{50%{opacity:.3}}
+  .tabs{display:flex;gap:4px;padding:0 12px;max-width:960px;margin:0 auto;overflow-x:auto}
+  .tab{background:none;border:0;color:var(--muted);padding:10px 14px;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap}
+  .tab.on{color:var(--amber);border-color:var(--amber)}
+  main{max-width:960px;margin:0 auto;padding:22px 18px 120px}
+  h2{font-size:20px;margin-bottom:6px}
+  .hint{color:var(--muted);font-size:14px;margin-bottom:18px}
+  .group{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:16px}
+  .group h3{font-size:16px;color:var(--amber);margin-bottom:12px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:14px;color:var(--muted);margin-bottom:6px}
+  input[type=text],input[type=password],input[type=date],input[type=url],textarea,select{
+    width:100%;background:var(--bg3);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px 12px;outline:none}
+  input:focus,textarea:focus,select:focus{border-color:var(--amber)}
+  textarea{min-height:90px;resize:vertical}
+
+  .btn{border:0;border-radius:10px;padding:10px 16px;cursor:pointer;font-weight:600;background:var(--bg3);color:var(--text);border:1px solid var(--line)}
+  .btn:hover{border-color:var(--amber)}
+  .btn.primary{background:var(--amber);color:#1a1205;border-color:var(--amber)}
+  .btn.danger{color:var(--red)}
+  .btn.white{background:#fff;color:#111;border-color:#fff}
+  .btn.sm{padding:6px 10px;font-size:13px}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .savebar{position:fixed;left:0;right:0;bottom:0;background:rgba(13,16,25,.96);border-top:1px solid var(--line);padding:12px 18px;display:flex;justify-content:center;z-index:9}
+  .savebar .btn{min-width:220px}
+
+  .imgfield{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .thumb{width:140px;height:90px;border-radius:10px;background:var(--bg3) center/cover no-repeat;border:1px dashed var(--line);display:grid;place-items:center;color:var(--muted);font-size:12px;flex-shrink:0}
+
+  /* services */
+  .svc{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
+  .svc .grid2{display:grid;grid-template-columns:140px 1fr;gap:10px;margin-bottom:10px}
+  @media(max-width:560px){.svc .grid2{grid-template-columns:1fr}}
+
+  /* gallery */
+  .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+  .gcard{background:var(--bg2);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .gcard .ph{aspect-ratio:4/3;background:var(--bg3) center/cover no-repeat;position:relative}
+  .gcard .badge{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.7);padding:2px 8px;border-radius:99px;font-size:12px}
+  .gcard .badge.off{color:var(--red)}
+  .gcard .info{padding:10px 12px;flex:1}
+  .gcard .info b{display:block;font-size:15px}
+  .gcard .info small{color:var(--muted)}
+  .gcard .acts{display:flex;gap:6px;padding:0 10px 10px;flex-wrap:wrap}
+  .empty{color:var(--muted);text-align:center;padding:40px;border:1px dashed var(--line);border-radius:14px}
+
+  /* modal */
+  .modal{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:30;display:grid;place-items:center;padding:16px}
+  .mbox{width:100%;max-width:520px;max-height:92vh;overflow:auto;background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .mbox h3{margin-bottom:14px}
+  .preview{width:100%;aspect-ratio:4/3;background:var(--bg3) center/contain no-repeat;border-radius:12px;border:1px dashed var(--line);display:grid;place-items:center;color:var(--muted);margin-bottom:10px;overflow:hidden}
+  .preview canvas{max-width:100%;max-height:100%}
+  .mfoot{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+
+  #toast{position:fixed;top:14px;left:50%;transform:translateX(-50%);background:var(--bg3);border:1px solid var(--line);padding:10px 18px;border-radius:99px;z-index:50;font-size:14px;transition:.2s}
+  #toast.ok{border-color:var(--green);color:var(--green)}
+  #toast.err{border-color:var(--red);color:var(--red)}
+  .spin{display:inline-block;width:12px;height:12px;border:2px solid var(--amber);border-right-color:transparent;border-radius:50%;animation:sp .7s linear infinite;margin-right:8px;vertical-align:-1px}
+  @keyframes sp{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login">
+  <div class="lbox">
+    <svg viewBox="0 0 40 40" width="54" height="54"><circle cx="20" cy="20" r="10" fill="#f4b740"/><ellipse cx="20" cy="20" rx="18" ry="6" fill="none" stroke="#f4b740" stroke-width="1.5" transform="rotate(-20 20 20)"/></svg>
+    <h1>BREWSPHERE</h1>
+    <p>จัดการเนื้อหาเว็บไซต์</p>
+    <input type="password" id="pw" placeholder="รหัสผ่านแอดมิน">
+    <button class="btn primary" style="width:100%" id="loginBtn">เข้าสู่ระบบ</button>
+    <div id="lerr"></div>
+    <a href="./" style="display:inline-block;margin-top:14px;color:var(--muted);font-size:14px;text-decoration:none">← กลับหน้าเว็บไซต์</a>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" class="hide">
+  <header>
+    <div class="top">
+      <div class="brand"><span class="dot"></span>BREWSPHERE · จัดการเว็บไซต์</div>
+      <div class="row"><a class="btn sm" href="./" target="_blank" style="text-decoration:none">ดูหน้าเว็บ ↗</a><button class="btn white sm" id="logout">ออกจากระบบ</button></div>
+    </div>
+    <div class="tabs">
+      <button class="tab on" data-tab="content">ข้อความและรูป</button>
+      <button class="tab" data-tab="products">ผลิตภัณฑ์</button>
+      <button class="tab" data-tab="gallery">กิจกรรม</button>
+      <button class="tab" data-tab="services">บริการ</button>
+      <button class="tab" data-tab="features">จุดเด่น</button>
+      <button class="tab" data-tab="account">ตั้งค่า</button>
+    </div>
+  </header>
+  <main>
+    <section id="t-content">
+      <h2>ข้อความและรูป</h2>
+      <p class="hint">แก้ข้อความแล้วกด "บันทึกข้อความ" ด้านล่าง ส่วนรูปจะบันทึกทันทีเมื่อเปลี่ยน · หน้าเว็บอัปเดตภายในไม่กี่วินาที</p>
+      <div id="settingsForm"></div>
+    </section>
+
+    <section id="t-products" class="hide">
+      <div class="row" style="justify-content:space-between;margin-bottom:6px">
+        <h2>ผลิตภัณฑ์ (เบียร์ของ Brewsphere)</h2>
+        <button class="btn primary" id="addPrd">+ เพิ่มเบียร์</button>
+      </div>
+      <p class="hint">กด ▲▼ เพื่อเรียงลำดับ · ซ่อนได้โดยไม่ต้องลบ · รูปฉลากไม่บังคับ (ถ้าไม่ใส่ เว็บจะแสดงการ์ดลายดวงดาวแทน)</p>
+      <div id="prdList" class="gal"></div>
+    </section>
+
+    <section id="t-gallery" class="hide">
+      <div class="row" style="justify-content:space-between;margin-bottom:6px">
+        <h2>รูปกิจกรรม</h2>
+        <button class="btn primary" id="addGal">+ เพิ่มกิจกรรม</button>
+      </div>
+      <p class="hint">กิจกรรมใหม่จะแสดงก่อน · กด ▲▼ เพื่อเรียงลำดับ · ซ่อนได้โดยไม่ต้องลบ</p>
+      <div id="galList" class="gal"></div>
+    </section>
+
+    <section id="t-services" class="hide">
+      <div class="row" style="justify-content:space-between;margin-bottom:6px">
+        <h2>บริการ</h2>
+        <button class="btn" id="addSvc">+ เพิ่มบริการ</button>
+      </div>
+      <p class="hint">แก้แล้วกด "บันทึกบริการ" ด้านล่าง</p>
+      <div id="svcList"></div>
+    </section>
+
+    <section id="t-features" class="hide">
+      <div class="row" style="justify-content:space-between;margin-bottom:6px">
+        <h2>จุดเด่น (ทำไมต้อง Brewsphere)</h2>
+        <button class="btn" id="addFtr">+ เพิ่มจุดเด่น</button>
+      </div>
+      <p class="hint">เช่น มาตรฐานคุณภาพ การจัดส่ง การรับประกัน · ในช่องรายละเอียด ขึ้นบรรทัดใหม่ = 1 หัวข้อย่อย · แก้แล้วกด "บันทึกจุดเด่น"</p>
+      <div id="ftrList"></div>
+    </section>
+
+    <section id="t-account" class="hide">
+      <h2>เปลี่ยนรหัสผ่าน</h2>
+      <p class="hint">รหัสผ่านนี้ใช้เข้าหน้าแอดมินเว็บไซต์เท่านั้น</p>
+      <div class="group" style="max-width:420px">
+        <div class="field"><label>รหัสผ่านเดิม</label><input type="password" id="pwOld"></div>
+        <div class="field"><label>รหัสผ่านใหม่ (อย่างน้อย 6 ตัว)</label><input type="password" id="pwNew"></div>
+        <button class="btn primary" id="pwSave">เปลี่ยนรหัสผ่าน</button>
+      </div>
+    </section>
+  </main>
+  <div class="savebar" id="saveBar"><button class="btn primary" id="saveBtn">บันทึกข้อความ</button></div>
+</div>
+
+<!-- Image editor -->
+<div class="modal hide" id="imgModal">
+  <div class="mbox">
+    <h3>เลือกรูป</h3>
+    <div class="preview" id="imgPrev">ยังไม่ได้เลือกรูป</div>
+    <div class="row">
+      <label class="btn">เลือกไฟล์รูป<input type="file" accept="image/*" id="imgFile" hidden></label>
+      <button class="btn" id="rotL" title="หมุนซ้าย">⟲ หมุนซ้าย</button>
+      <button class="btn" id="rotR" title="หมุนขวา">⟳ หมุนขวา</button>
+    </div>
+    <p class="hint" style="margin:10px 0 0">ระบบย่อรูปอัตโนมัติ (ด้านยาวสุด 1600px) ให้เว็บโหลดเร็ว</p>
+    <div class="mfoot">
+      <button class="btn" id="imgCancel">ยกเลิก</button>
+      <button class="btn primary" id="imgOk">ใช้รูปนี้</button>
+    </div>
+  </div>
+</div>
+
+<!-- Gallery editor -->
+<div class="modal hide" id="galModal">
+  <div class="mbox">
+    <h3 id="galTitle">เพิ่มกิจกรรม</h3>
+    <div class="preview" id="galPrev">ยังไม่มีรูป</div>
+    <div class="row" style="margin-bottom:14px"><button class="btn" id="galPick">เลือก / เปลี่ยนรูป</button></div>
+    <div class="field"><label>วันที่</label><input type="date" id="gDate"></div>
+    <div class="field"><label>ชื่อกิจกรรม</label><input type="text" id="gTitle" placeholder="เช่น Brew Day กับร้าน..."></div>
+    <div class="field"><label>รายละเอียด (ไม่บังคับ)</label><textarea id="gCap"></textarea></div>
+    <label class="row" style="gap:8px;cursor:pointer"><input type="checkbox" id="gShow" checked> แสดงบนเว็บไซต์</label>
+    <div class="mfoot">
+      <button class="btn" id="galCancel">ยกเลิก</button>
+      <button class="btn primary" id="galSave">บันทึก</button>
+    </div>
+  </div>
+</div>
+
+<!-- Product editor -->
+<div class="modal hide" id="prdModal">
+  <div class="mbox">
+    <h3 id="prdTitle">เพิ่มเบียร์</h3>
+    <div class="preview" id="prdPrev">ยังไม่มีรูป (ไม่บังคับ)</div>
+    <div class="row" style="margin-bottom:14px">
+      <button class="btn" id="prdPick">เลือก / เปลี่ยนรูปฉลาก</button>
+      <button class="btn danger" id="prdNoImg">ไม่ใช้รูป</button>
+    </div>
+    <div class="field"><label>ชื่อเบียร์</label><input type="text" id="pName" placeholder="เช่น Hopstar"></div>
+    <div class="field"><label>ซีรีส์ (ไม่บังคับ)</label><input type="text" id="pSeries" list="seriesList" placeholder="เช่น Celestial Series"><datalist id="seriesList"></datalist></div>
+    <div class="svc grid2" style="display:grid;grid-template-columns:1fr 120px;gap:10px;background:none;border:0;padding:0">
+      <div class="field"><label>สไตล์</label><input type="text" id="pStyle" placeholder="เช่น Hazy IPA"></div>
+      <div class="field"><label>ABV %</label><input type="text" id="pAbv" inputmode="decimal" placeholder="6.7"></div>
+    </div>
+    <div class="field"><label>Taste Note (คั่นด้วย , )</label><input type="text" id="pNotes" placeholder="Citrus, Sweet Fruit"></div>
+    <div class="field"><label>คำอธิบาย</label><textarea id="pDesc"></textarea></div>
+    <label class="row" style="gap:8px;cursor:pointer"><input type="checkbox" id="pShow" checked> แสดงบนเว็บไซต์</label>
+    <div class="mfoot">
+      <button class="btn" id="prdCancel">ยกเลิก</button>
+      <button class="btn primary" id="prdSave">บันทึก</button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm -->
+<div class="modal hide" id="cfModal">
+  <div class="mbox" style="max-width:380px">
+    <h3 id="cfText">ยืนยัน?</h3>
+    <div class="mfoot">
+      <button class="btn" id="cfNo">ยกเลิก</button>
+      <button class="btn primary" id="cfYes" style="background:var(--red);border-color:var(--red);color:#fff">ลบ</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="hide"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const ICONS = {flask:'ขวดทดลอง', keg:'ถังเบียร์', doc:'เอกสาร', truck:'รถส่งของ', star:'ดาว', users:'คน/ทีม', calendar:'ปฏิทิน', leaf:'วัตถุดิบ/ฮอปส์'};
+let token = null, DATA = null, curTab = 'content';
+try { token = sessionStorage.getItem('bs_web_tok'); } catch(e) {}
+
+const thumb = (id, w) => id ? `https://drive.google.com/thumbnail?id=${encodeURIComponent(id)}&sz=w${w||600}` : '';
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const API_URL = String(window.BREWSPHERE_API_URL || '').trim();
+async function run(fn, ...args) {
+  if (!API_URL) throw new Error('ยังไม่ได้ตั้งค่า API_URL ในไฟล์ config.js');
+  let data;
+  try {
+    const r = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // กัน preflight ของ Apps Script
+      body: JSON.stringify({ fn, args })
+    });
+    data = await r.json();
+  } catch (e) { throw new Error('เชื่อมต่อเซิร์ฟเวอร์ไม่ได้ ลองใหม่อีกครั้ง'); }
+  if (!data.ok) {
+    if (String(data.error).indexOf('SESSION_EXPIRED') >= 0) { logout(); toast('หมดเวลาเข้าสู่ระบบ กรุณาเข้าใหม่', 'err'); }
+    throw new Error(data.error);
+  }
+  return data.result;
+}
+
+let toastT;
+function toast(msg, kind) {
+  const t = $('#toast');
+  t.className = kind || '';
+  t.innerHTML = kind === 'busy' ? '<span class="spin"></span>' + esc(msg) : esc(msg);
+  clearTimeout(toastT);
+  if (kind !== 'busy') toastT = setTimeout(() => t.classList.add('hide'), 2600);
+}
+async function saving(promise, okMsg) {
+  toast('กำลังบันทึก...', 'busy');
+  try { const r = await promise; toast(okMsg || 'บันทึกแล้ว ✓', 'ok'); return r; }
+  catch (e) { toast('ผิดพลาด: ' + (e.message || e), 'err'); throw e; }
+}
+
+/* ── login ── */
+$('#loginBtn').onclick = doLogin;
+$('#pw').onkeydown = e => { if (e.key === 'Enter') doLogin(); };
+async function doLogin() {
+  $('#lerr').textContent = '';
+  $('#loginBtn').disabled = true;
+  try {
+    token = await run('login', $('#pw').value);
+    try { sessionStorage.setItem('bs_web_tok', token); } catch(e) {}
+    await load();
+  } catch (e) { $('#lerr').textContent = e.message || 'เข้าสู่ระบบไม่สำเร็จ'; }
+  $('#loginBtn').disabled = false;
+}
+function logout() {
+  token = null;
+  try { sessionStorage.removeItem('bs_web_tok'); } catch(e) {}
+  $('#app').classList.add('hide'); $('#login').classList.remove('hide'); $('#pw').value = '';
+}
+$('#logout').onclick = logout;
+
+async function load() {
+  toast('กำลังโหลด...', 'busy');
+  DATA = await run('adminLoad', token);
+  $('#login').classList.add('hide'); $('#app').classList.remove('hide');
+  DATA.products = DATA.products || [];
+  renderSettings(); renderProducts(); renderGallery(); renderList('services'); renderList('features');
+  toast('พร้อมใช้งาน ✓', 'ok');
+}
+
+/* ── tabs ── */
+document.querySelectorAll('.tab').forEach(b => b.onclick = () => {
+  curTab = b.dataset.tab;
+  document.querySelectorAll('.tab').forEach(x => x.classList.toggle('on', x === b));
+  ['content','products','gallery','services','features','account'].forEach(t => $('#t-' + t).classList.toggle('hide', t !== curTab));
+  const bar = $('#saveBar');
+  bar.classList.toggle('hide', !['content', 'services', 'features'].includes(curTab));
+  $('#saveBtn').textContent = { services: 'บันทึกบริการ', features: 'บันทึกจุดเด่น' }[curTab] || 'บันทึกข้อความ';
+});
+$('#saveBtn').onclick = () => LISTS[curTab] ? saveList(curTab) : saveSettings();
+
+/* ── settings ── */
+function renderSettings() {
+  const groups = {};
+  DATA.settings.forEach(s => (groups[s.group] = groups[s.group] || []).push(s));
+  $('#settingsForm').innerHTML = Object.keys(groups).map(g => `
+    <div class="group"><h3>${esc(g)}</h3>
+      ${groups[g].map(s => {
+        if (s.type === 'image') return `
+          <div class="field"><label>${esc(s.label)}</label>
+            <div class="imgfield">
+              <div class="thumb" style="${s.value ? `background-image:url('${thumb(s.value,400)}')` : ''}">${s.value ? '' : 'ไม่มีรูป'}</div>
+              <div class="row">
+                <button class="btn sm" data-img="${esc(s.key)}">${s.value ? 'เปลี่ยนรูป' : 'เลือกรูป'}</button>
+                ${s.value ? `<button class="btn sm danger" data-imgdel="${esc(s.key)}">ลบรูป</button>` : ''}
+              </div>
+            </div></div>`;
+        const input = s.type === 'textarea'
+          ? `<textarea data-key="${esc(s.key)}">${esc(s.value)}</textarea>`
+          : `<input type="${s.type === 'url' ? 'url' : 'text'}" data-key="${esc(s.key)}" value="${esc(s.value)}">`;
+        return `<div class="field"><label>${esc(s.label)}</label>${input}</div>`;
+      }).join('')}
+    </div>`).join('');
+
+  document.querySelectorAll('[data-img]').forEach(b => b.onclick = async () => {
+    const key = b.dataset.img;
+    const dataUrl = await imageEditor({ png: key === 'logoImage' });
+    if (!dataUrl) return;
+    const id = await saving((async () => {
+      const fid = await run('uploadImage', token, dataUrl, key);
+      await run('saveSettings', token, { [key]: fid });
+      return fid;
+    })(), 'เปลี่ยนรูปแล้ว ✓');
+    DATA.settings.find(s => s.key === key).value = id;
+    keepTextEdits(); renderSettings();
+  });
+  document.querySelectorAll('[data-imgdel]').forEach(b => b.onclick = async () => {
+    const key = b.dataset.imgdel;
+    if (!await confirmBox('ลบรูปนี้?')) return;
+    await saving(run('saveSettings', token, { [key]: '' }), 'ลบรูปแล้ว ✓');
+    DATA.settings.find(s => s.key === key).value = '';
+    keepTextEdits(); renderSettings();
+  });
+}
+function keepTextEdits() {
+  document.querySelectorAll('#settingsForm [data-key]').forEach(el => {
+    const s = DATA.settings.find(x => x.key === el.dataset.key); if (s) s.value = el.value;
+  });
+}
+async function saveSettings() {
+  const obj = {};
+  document.querySelectorAll('#settingsForm [data-key]').forEach(el => obj[el.dataset.key] = el.value.trim());
+  await saving(run('saveSettings', token, obj));
+  keepTextEdits();
+}
+
+/* ── รายการแบบ บริการ / จุดเด่น (แก้แล้วกดบันทึก) ── */
+const LISTS = {
+  services: { box: '#svcList', key: 'services', fn: 'saveServices', ph: 'ชื่อบริการ', tph: 'คำอธิบาย', empty: 'ยังไม่มีบริการ' },
+  features: { box: '#ftrList', key: 'features', fn: 'saveFeatures', ph: 'หัวข้อ เช่น การจัดส่ง', tph: 'รายละเอียด (ขึ้นบรรทัดใหม่ = หัวข้อย่อย)', empty: 'ยังไม่มีจุดเด่น' },
+};
+function renderList(kind) {
+  const L = LISTS[kind], arr = DATA[L.key] = DATA[L.key] || [];
+  $(L.box).innerHTML = arr.map((s, i) => `
+    <div class="svc">
+      <div class="grid2">
+        <select data-i="${i}" data-f="icon">${Object.keys(ICONS).map(k => `<option value="${k}" ${k === s.icon ? 'selected' : ''}>${ICONS[k]}</option>`).join('')}</select>
+        <input type="text" data-i="${i}" data-f="title" value="${esc(s.title)}" placeholder="${L.ph}">
+      </div>
+      <textarea data-i="${i}" data-f="text" placeholder="${L.tph}">${esc(s.text)}</textarea>
+      <div class="row" style="margin-top:10px;justify-content:space-between">
+        <label class="row" style="gap:6px;cursor:pointer"><input type="checkbox" data-i="${i}" data-f="show" ${s.show ? 'checked' : ''}> แสดง</label>
+        <div class="row">
+          <button class="btn sm" data-mv="${i}" data-d="-1">▲</button>
+          <button class="btn sm" data-mv="${i}" data-d="1">▼</button>
+          <button class="btn sm danger" data-del="${i}">ลบ</button>
+        </div>
+      </div>
+    </div>`).join('') || `<div class="empty">${L.empty}</div>`;
+  document.querySelectorAll(L.box + ' [data-f]').forEach(el => el.oninput = el.onchange = () => {
+    arr[el.dataset.i][el.dataset.f] = el.type === 'checkbox' ? el.checked : el.value;
+  });
+  document.querySelectorAll(L.box + ' [data-mv]').forEach(b => b.onclick = () => {
+    const i = +b.dataset.mv, j = i + (+b.dataset.d);
+    if (j < 0 || j >= arr.length) return;
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+    renderList(kind);
+  });
+  document.querySelectorAll(L.box + ' [data-del]').forEach(b => b.onclick = async () => {
+    if (!await confirmBox('ลบรายการนี้? (มีผลเมื่อกดบันทึก)')) return;
+    arr.splice(+b.dataset.del, 1); renderList(kind);
+  });
+}
+function renderServices() { renderList('services'); }
+$('#addSvc').onclick = () => { DATA.services.push({ show: true, icon: 'star', title: '', text: '' }); renderList('services'); };
+$('#addFtr').onclick = () => { DATA.features.push({ show: true, icon: 'star', title: '', text: '' }); renderList('features'); };
+async function saveList(kind) { const L = LISTS[kind]; await saving(run(L.fn, token, DATA[L.key])); }
+
+/* ── gallery ── */
+function renderGallery() {
+  const g = DATA.gallery;
+  $('#galList').innerHTML = g.length ? g.map((x, i) => `
+    <div class="gcard">
+      <div class="ph" style="background-image:url('${thumb(x.fileId, 500)}')">
+        <span class="badge ${x.show ? '' : 'off'}">${x.show ? 'แสดง' : 'ซ่อนอยู่'}</span>
+      </div>
+      <div class="info"><b>${esc(x.title) || '(ไม่มีชื่อ)'}</b><small>${esc(thaiDate(x.date))}</small></div>
+      <div class="acts">
+        <button class="btn sm" data-gmv="${i}" data-d="-1">▲</button>
+        <button class="btn sm" data-gmv="${i}" data-d="1">▼</button>
+        <button class="btn sm" data-gedit="${i}">แก้ไข</button>
+        <button class="btn sm danger" data-gdel="${i}">ลบ</button>
+      </div>
+    </div>`).join('') : '<div class="empty" style="grid-column:1/-1">ยังไม่มีรูปกิจกรรม กด "+ เพิ่มกิจกรรม" เพื่อเริ่ม</div>';
+
+  document.querySelectorAll('[data-gedit]').forEach(b => b.onclick = () => openGal(DATA.gallery[+b.dataset.gedit]));
+  document.querySelectorAll('[data-gdel]').forEach(b => b.onclick = async () => {
+    const x = DATA.gallery[+b.dataset.gdel];
+    if (!await confirmBox('ลบกิจกรรม "' + (x.title || '') + '" และรูปนี้?')) return;
+    await saving(run('deleteGalleryItem', token, x.id), 'ลบแล้ว ✓');
+    DATA.gallery.splice(+b.dataset.gdel, 1); renderGallery();
+  });
+  document.querySelectorAll('[data-gmv]').forEach(b => b.onclick = async () => {
+    const i = +b.dataset.gmv, j = i + (+b.dataset.d);
+    if (j < 0 || j >= DATA.gallery.length) return;
+    [DATA.gallery[i], DATA.gallery[j]] = [DATA.gallery[j], DATA.gallery[i]];
+    renderGallery();
+    await saving(run('reorderGallery', token, DATA.gallery.map(x => x.id)), 'เรียงลำดับแล้ว ✓');
+  });
+}
+function thaiDate(d) {
+  if (!d) return '';
+  const t = new Date(d + 'T00:00:00'); if (isNaN(t)) return d;
+  return t.toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: 'numeric' });
+}
+function today() {
+  const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
+  return d.toISOString().slice(0, 10);
+}
+
+let galItem = null, galNewImg = null;
+$('#addGal').onclick = () => openGal(null);
+function openGal(item) {
+  galItem = item; galNewImg = null;
+  $('#galTitle').textContent = item ? 'แก้ไขกิจกรรม' : 'เพิ่มกิจกรรม';
+  $('#gDate').value = item ? item.date : today();
+  $('#gTitle').value = item ? item.title : '';
+  $('#gCap').value = item ? item.caption : '';
+  $('#gShow').checked = item ? item.show : true;
+  setGalPreview(item && item.fileId ? thumb(item.fileId, 1000) : null);
+  $('#galModal').classList.remove('hide');
+}
+function setGalPreview(src) {
+  const p = $('#galPrev');
+  p.style.backgroundImage = src ? `url('${src}')` : '';
+  p.textContent = src ? '' : 'ยังไม่มีรูป';
+}
+$('#galPick').onclick = async () => {
+  const d = await imageEditor({});
+  if (d) { galNewImg = d; setGalPreview(d); }
+};
+$('#galCancel').onclick = () => $('#galModal').classList.add('hide');
+$('#galSave').onclick = async () => {
+  if (!galNewImg && !(galItem && galItem.fileId)) return toast('กรุณาเลือกรูปก่อน', 'err');
+  const item = {
+    id: galItem ? galItem.id : null,
+    date: $('#gDate').value, title: $('#gTitle').value.trim(), caption: $('#gCap').value.trim(),
+    show: $('#gShow').checked, fileId: galItem ? galItem.fileId : ''
+  };
+  $('#galSave').disabled = true;
+  try {
+    await saving((async () => {
+      if (galNewImg) item.fileId = await run('uploadImage', token, galNewImg, 'activity');
+      item.id = await run('saveGalleryItem', token, item);
+    })());
+    if (galItem) Object.assign(galItem, item); else DATA.gallery.unshift(item);
+    renderGallery();
+    $('#galModal').classList.add('hide');
+  } catch (e) {}
+  $('#galSave').disabled = false;
+};
+
+/* ── products ── */
+function renderProducts() {
+  const p = DATA.products;
+  $('#prdList').innerHTML = p.length ? p.map((x, i) => `
+    <div class="gcard">
+      <div class="ph" style="${x.fileId ? `background-image:url('${thumb(x.fileId, 500)}');background-size:contain` : 'background:radial-gradient(circle at 35% 35%,#f4b740,#0b0e17 70%)'}">
+        <span class="badge ${x.show ? '' : 'off'}">${x.show ? 'แสดง' : 'ซ่อนอยู่'}</span>
+      </div>
+      <div class="info"><b>${esc(x.name) || '(ไม่มีชื่อ)'}</b><small>${esc(x.style)}${x.abv ? ' · ' + esc(x.abv) + '%' : ''}${x.series ? '<br>' + esc(x.series) : ''}</small></div>
+      <div class="acts">
+        <button class="btn sm" data-pmv="${i}" data-d="-1">▲</button>
+        <button class="btn sm" data-pmv="${i}" data-d="1">▼</button>
+        <button class="btn sm" data-pedit="${i}">แก้ไข</button>
+        <button class="btn sm danger" data-pdel="${i}">ลบ</button>
+      </div>
+    </div>`).join('') : '<div class="empty" style="grid-column:1/-1">ยังไม่มีผลิตภัณฑ์ กด "+ เพิ่มเบียร์"</div>';
+
+  document.querySelectorAll('[data-pedit]').forEach(b => b.onclick = () => openPrd(DATA.products[+b.dataset.pedit]));
+  document.querySelectorAll('[data-pdel]').forEach(b => b.onclick = async () => {
+    const x = DATA.products[+b.dataset.pdel];
+    if (!await confirmBox('ลบ "' + (x.name || '') + '"?')) return;
+    await saving(run('deleteProduct', token, x.id), 'ลบแล้ว ✓');
+    DATA.products.splice(+b.dataset.pdel, 1); renderProducts();
+  });
+  document.querySelectorAll('[data-pmv]').forEach(b => b.onclick = async () => {
+    const i = +b.dataset.pmv, j = i + (+b.dataset.d);
+    if (j < 0 || j >= DATA.products.length) return;
+    [DATA.products[i], DATA.products[j]] = [DATA.products[j], DATA.products[i]];
+    renderProducts();
+    await saving(run('reorderProducts', token, DATA.products.map(x => x.id)), 'เรียงลำดับแล้ว ✓');
+  });
+}
+
+let prdItem = null, prdNewImg = null, prdClearImg = false;
+$('#addPrd').onclick = () => openPrd(null);
+function openPrd(item) {
+  prdItem = item; prdNewImg = null; prdClearImg = false;
+  $('#prdTitle').textContent = item ? 'แก้ไขเบียร์' : 'เพิ่มเบียร์';
+  $('#pName').value = item ? item.name : '';
+  $('#pSeries').value = item ? item.series : '';
+  $('#pStyle').value = item ? item.style : '';
+  $('#pAbv').value = item ? item.abv : '';
+  $('#pNotes').value = item ? item.notes : '';
+  $('#pDesc').value = item ? item.desc : '';
+  $('#pShow').checked = item ? item.show : true;
+  const series = [...new Set(DATA.products.map(x => x.series).filter(Boolean))];
+  $('#seriesList').innerHTML = series.map(s => `<option value="${esc(s)}">`).join('');
+  setPrdPreview(item && item.fileId ? thumb(item.fileId, 1000) : null);
+  $('#prdModal').classList.remove('hide');
+}
+function setPrdPreview(src) {
+  const p = $('#prdPrev');
+  p.style.backgroundImage = src ? `url('${src}')` : '';
+  p.textContent = src ? '' : 'ยังไม่มีรูป (ไม่บังคับ)';
+}
+$('#prdPick').onclick = async () => {
+  const d = await imageEditor({ png: true, max: 1000 });
+  if (d) { prdNewImg = d; prdClearImg = false; setPrdPreview(d); }
+};
+$('#prdNoImg').onclick = () => { prdNewImg = null; prdClearImg = true; setPrdPreview(null); };
+$('#prdCancel').onclick = () => $('#prdModal').classList.add('hide');
+$('#prdSave').onclick = async () => {
+  if (!$('#pName').value.trim()) return toast('กรุณาใส่ชื่อเบียร์', 'err');
+  const item = {
+    id: prdItem ? prdItem.id : null,
+    name: $('#pName').value.trim(), series: $('#pSeries').value.trim(), style: $('#pStyle').value.trim(),
+    abv: $('#pAbv').value.trim().replace('%', ''), notes: $('#pNotes').value.trim(), desc: $('#pDesc').value.trim(),
+    show: $('#pShow').checked, fileId: prdItem && !prdClearImg ? prdItem.fileId : ''
+  };
+  $('#prdSave').disabled = true;
+  try {
+    await saving((async () => {
+      if (prdNewImg) item.fileId = await run('uploadImage', token, prdNewImg, 'product');
+      item.id = await run('saveProduct', token, item);
+    })());
+    if (prdItem) Object.assign(prdItem, item); else DATA.products.push(item);
+    renderProducts();
+    $('#prdModal').classList.add('hide');
+  } catch (e) {}
+  $('#prdSave').disabled = false;
+};
+
+/* ── image editor: เลือก หมุน ย่อ ── */
+let ie = { img: null, rot: 0, resolve: null, png: false };
+function imageEditor(opt) {
+  ie = { img: null, rot: 0, resolve: null, png: !!(opt && opt.png), max: (opt && opt.max) || 1600 };
+  $('#imgFile').value = '';
+  $('#imgPrev').innerHTML = 'ยังไม่ได้เลือกรูป';
+  $('#imgModal').classList.remove('hide');
+  setTimeout(() => $('#imgFile').click(), 50);
+  return new Promise(res => ie.resolve = res);
+}
+$('#imgFile').onchange = e => {
+  const f = e.target.files[0]; if (!f) return;
+  const img = new Image();
+  img.onload = () => { ie.img = img; ie.rot = 0; drawIE(); };
+  img.onerror = () => toast('เปิดไฟล์รูปนี้ไม่ได้ ลองไฟล์ JPG/PNG', 'err');
+  img.src = URL.createObjectURL(f);
+};
+function renderCanvas(max) {
+  const img = ie.img; let w = img.naturalWidth, h = img.naturalHeight;
+  const s = Math.min(1, max / Math.max(w, h)); w = Math.round(w * s); h = Math.round(h * s);
+  const c = document.createElement('canvas');
+  const r = ((ie.rot % 360) + 360) % 360;
+  if (r % 180) { c.width = h; c.height = w; } else { c.width = w; c.height = h; }
+  const x = c.getContext('2d');
+  if (!ie.png) { x.fillStyle = '#fff'; x.fillRect(0, 0, c.width, c.height); }
+  x.translate(c.width / 2, c.height / 2); x.rotate(r * Math.PI / 180);
+  x.drawImage(img, -w / 2, -h / 2, w, h);
+  return c;
+}
+function drawIE() { const p = $('#imgPrev'); p.innerHTML = ''; p.appendChild(renderCanvas(900)); }
+$('#rotL').onclick = () => { if (ie.img) { ie.rot -= 90; drawIE(); } };
+$('#rotR').onclick = () => { if (ie.img) { ie.rot += 90; drawIE(); } };
+$('#imgCancel').onclick = () => { $('#imgModal').classList.add('hide'); ie.resolve && ie.resolve(null); };
+$('#imgOk').onclick = () => {
+  if (!ie.img) return toast('กรุณาเลือกรูปก่อน', 'err');
+  const c = renderCanvas(ie.max);
+  const data = ie.png ? c.toDataURL('image/png') : c.toDataURL('image/jpeg', 0.85);
+  $('#imgModal').classList.add('hide');
+  ie.resolve(data);
+};
+
+/* ── confirm ── */
+function confirmBox(text) {
+  $('#cfText').textContent = text; $('#cfModal').classList.remove('hide');
+  return new Promise(res => {
+    $('#cfYes').onclick = () => { $('#cfModal').classList.add('hide'); res(true); };
+    $('#cfNo').onclick = () => { $('#cfModal').classList.add('hide'); res(false); };
+  });
+}
+
+/* ── password ── */
+$('#pwSave').onclick = async () => {
+  await saving(run('changePassword', token, $('#pwOld').value, $('#pwNew').value), 'เปลี่ยนรหัสผ่านแล้ว ✓');
+  $('#pwOld').value = $('#pwNew').value = '';
+};
+
+/* ── start ── */
+if (!API_URL) $('#lerr').textContent = 'ยังไม่ได้ตั้งค่า API_URL ในไฟล์ config.js';
+if (token) load().catch(() => logout());
+</script>
+</body>
+</html>
